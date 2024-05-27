@@ -6,10 +6,10 @@ Arduino::Arduino(std::string port, std::string* readData, std::string* writeData
 port(port),readData(readData),writeData(writeData)
 {
     HANDLE hSerial = CreateFile(port.c_str(), GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-    
+
 }
 
-~Ardiuno::Arduino()
+Arduino::~Arduino()
 {
     CloseHandle(hSerial);
 }
@@ -17,13 +17,13 @@ port(port),readData(readData),writeData(writeData)
 void Arduino::writeToPort() 
 {
 DWORD bytesWritten;
-WriteFile(hSerial, *writeData, *writeData.size(), &bytesWritten, NULL);
+WriteFile(hSerial, writeData, writeData->size(), &bytesWritten, NULL);
 }
 
-void Ardiuno::writeToPort(std::string data) 
+void Arduino::writeToPort(std::string* data) 
 {
 DWORD bytesWritten;
-WriteFile(hSerial, data, data.size(), &bytesWritten, NULL);
+WriteFile(hSerial, data, data->size(), &bytesWritten, NULL);
 }
 
 
@@ -35,52 +35,6 @@ ReadFile(hSerial, readBuffer, sizeof(readBuffer), &bytesRead, NULL);
 return *readData;
 }
 
-std::string fromArduino(std::string port)
-{
-    
-    std::string readData;
-
-    HANDLE hSerial = CreateFile(port.c_str(), GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-    DWORD bytesRead;
-    char readBuffer[256];
-    if (!ReadFile(hSerial, readBuffer, sizeof(readBuffer), &bytesRead, NULL)) 
-    {
-        std::cerr << "Error reading from serial port!" << std::endl;
-        CloseHandle(hSerial);
-        return "Pusto";
-    }
-    readData = std::string(readBuffer, bytesRead);
-    CloseHandle(hSerial);
-
-    // Wyświetlamy otrzymaną odpowiedź
-    std::cout << "Received: " << readData << std::endl;
-
-    return readData;
-}
-
-int toArduino(std::string port)
-{
-    HANDLE hSerial = CreateFile(port.c_str(), GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-    if (hSerial == INVALID_HANDLE_VALUE)
-	{
-        if (GetLastError() == ERROR_FILE_NOT_FOUND) {
-            std::cerr << "Port not available!" << std::endl;
-        } else {
-            std::cerr << "Error while opening serial port!" << std::endl;
-        }
-        return 1;
-    }
-
-    DWORD bytesWritten;
-    char sendData[] = "H";
-    if (!WriteFile(hSerial, sendData, sizeof(sendData), &bytesWritten, NULL) || bytesWritten != sizeof(sendData)) {
-        std::cerr << "Error writing to serial port!" << std::endl;
-        CloseHandle(hSerial);
-        return 1;
-    }
-
-    CloseHandle(hSerial);
-}
 
 bool configureSerialPort(HANDLE hSerial, int speed) 
 {
@@ -145,26 +99,4 @@ std::vector<std::string> findSerialPorts(int speed)
     return goodPorts;
 }
 
-std::string portSelection(std::vector<std::string> ports)
-{
-	int num =1;
-	std::cout<<"Chose port"<<std::endl;
-    
-	for(int i=0;i<ports.size();i++)
-	{
-		std::cout<<i+1<<". "<<ports[i]<<std::endl;
-	}
-    
-	std::cin >> num;
-    
-    while (std::cin.fail() || num < 1 || num > ports.size())
-    {
-        std::cout << "Wrong input" << std::endl;
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cin >> num;
-    }
-
-	return ports[num-1];
-}
 #endif
