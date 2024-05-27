@@ -2,7 +2,6 @@
 
 int main()
 {
-
     const int speed = 9600;
  	std::vector<std::string> ports = findSerialPorts(speed);
 
