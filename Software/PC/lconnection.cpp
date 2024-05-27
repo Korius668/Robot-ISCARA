@@ -26,22 +26,22 @@ port(port),readData(readData),writeData(writeData)
     fcntl(fd, F_SETFL, FNDELAY);
 }
 
-~Arduino::Arduino()
+Arduino::~Arduino()
 {
     close(fd);
 }
 
 void Arduino::writeToPort() 
 {
-write(fd, *writeData, *writeData.size());
+write(fd, writeData, writeData->size());
 }
 
-void Ardiuno::writeToPort(std::string data) 
+void Arduino::writeToPort(std::string* data) 
 {
-write(fd, data, data.size());
+write(fd, data, data->size());
 }
 
-std::string Ardiuno::readFromPort() 
+std::string Arduino::readFromPort() 
 {
 ssize_t bytesRead=read(fd, readBuffer, sizeof(readBuffer));
 *readData = std::string(readBuffer, bytesRead);

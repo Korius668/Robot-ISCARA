@@ -25,7 +25,7 @@ public:
     Arduino(std::string port, std::string* readData, std::string* writeData);
     ~Arduino();
     void writeToPort();
-    void writeToPort(std::string data);
+    void writeToPort(std::string* data);
     std::string readFromPort();
 };
 
