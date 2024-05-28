@@ -9,13 +9,14 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()),
+            this, SLOT(comboBoxSetup()));
+    timer->start(TIMER_TIME);
+
+
     this->setWindowState(Qt::WindowMaximized); //Maximizes the window
-
-    SerialCommunication ser;
-
-    ser.getPorts();
-
-    ui->comboBox->addItem("Hi");
 }
 
 MainWindow::~MainWindow()
@@ -23,8 +24,14 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-
-
+void MainWindow::comboBoxSetup(){
+    serial.getPorts();
+    if (ui->comboBox->count() != serial.portCounter()){
+        ui->comboBox->clear();
+        for (int i = 0; i < serial.portCounter(); i++){
+            ui->comboBox->addItem(serial.portName(i));
+        }
+    }
+}
 
 

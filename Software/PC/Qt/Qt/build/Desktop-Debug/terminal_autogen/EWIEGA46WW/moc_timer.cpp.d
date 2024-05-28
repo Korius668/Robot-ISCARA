@@ -1,13 +1,9 @@
-/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/terminal_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/mainwindow.h \
+/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/terminal_autogen/EWIEGA46WW/moc_timer.cpp: /home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/timer.h \
   /home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/terminal_autogen/moc_predefs.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/QCoreApplication \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/QDebug \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/QObject \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/QTimer \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/q20functional.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/q20memory.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/q20type_traits.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/q23utility.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qalgorithms.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qanystringview.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qarraydata.h \
@@ -33,17 +29,8 @@
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qcontainerfwd.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qcontainerinfo.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qcontainertools_impl.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qcontiguouscache.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qcoreapplication.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qcoreapplication_platform.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qcoreevent.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qdarwinhelpers.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qdatastream.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qdeadlinetimer.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qdebug.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qelapsedtimer.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qendian.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qeventloop.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qexceptionhandling.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qflags.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qfloat16.h \
@@ -53,26 +40,19 @@
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qgenericatomic.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qglobal.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qglobalstatic.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qhash.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qhashfunctions.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qiodevice.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qiodevicebase.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qiterable.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qiterator.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qlatin1stringview.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qline.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qlist.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qlocale.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qlogging.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qmalloc.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qmap.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qmargins.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qmath.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qmetacontainer.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qmetatype.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qminmax.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qnamespace.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qnativeinterface.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qnumeric.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qobject.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qobject_impl.h \
@@ -80,20 +60,10 @@
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qobjectdefs_impl.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qoverload.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qpair.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qpoint.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qprocessordetection.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qproperty.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qpropertyprivate.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qrect.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qrefcount.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qscopedpointer.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qscopeguard.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qset.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qshareddata.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qshareddata_impl.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qsharedpointer.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qsize.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qstring.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qstringalgorithms.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qstringbuilder.h \
@@ -116,7 +86,6 @@
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qtcoreexports.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qtdeprecationmarkers.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qtenvironmentvariables.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qtextstream.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qtimer.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qtmetamacros.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qtnoop.h \
@@ -129,55 +98,9 @@
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qtypeinfo.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qtypes.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qutf8stringview.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qvariant.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qvarlengtharray.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qversiontagging.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qxptype_traits.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/qyieldcpu.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qaction.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qbitmap.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qbrush.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qcolor.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qcursor.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qfont.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qfontinfo.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qfontmetrics.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qguiapplication.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qguiapplication_platform.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qicon.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qimage.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qinputmethod.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qkeysequence.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qpaintdevice.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qpalette.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qpixelformat.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qpixmap.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qpolygon.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qregion.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qrgb.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qrgba64.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qtgui-config.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qtguiexports.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qtguiglobal.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qtransform.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui/qwindowdefs.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtSerialPort/QSerialPort \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtSerialPort/QSerialPortInfo \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtSerialPort/qserialport.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtSerialPort/qserialportglobal.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtSerialPort/qserialportinfo.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtSerialPort/qtserialportexports.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtWidgets/QApplication \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtWidgets/QMainWindow \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtWidgets/qapplication.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtWidgets/qmainwindow.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtWidgets/qsizepolicy.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtWidgets/qtabwidget.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgetsexports.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
-  /home/jchlopak/Qt/6.7.1/gcc_64/include/QtWidgets/qwidget.h \
-  /home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/serialcommunication.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -192,11 +115,8 @@
   /usr/include/bits/floatn-common.h \
   /usr/include/bits/floatn.h \
   /usr/include/bits/libc-header-start.h \
-  /usr/include/bits/local_lim.h \
   /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
-  /usr/include/bits/posix1_lim.h \
-  /usr/include/bits/posix2_lim.h \
   /usr/include/bits/pthread_stack_min-dynamic.h \
   /usr/include/bits/pthreadtypes-arch.h \
   /usr/include/bits/pthreadtypes.h \
@@ -242,13 +162,10 @@
   /usr/include/bits/types/wint_t.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/uintn-identity.h \
-  /usr/include/bits/uio_lim.h \
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
   /usr/include/bits/wchar.h \
-  /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
-  /usr/include/bits/xopen_lim.h \
   /usr/include/c++/14/algorithm \
   /usr/include/c++/14/array \
   /usr/include/c++/14/atomic \
@@ -262,8 +179,6 @@
   /usr/include/c++/14/bits/allocator.h \
   /usr/include/c++/14/bits/atomic_base.h \
   /usr/include/c++/14/bits/atomic_lockfree_defines.h \
-  /usr/include/c++/14/bits/basic_ios.h \
-  /usr/include/c++/14/bits/basic_ios.tcc \
   /usr/include/c++/14/bits/basic_string.h \
   /usr/include/c++/14/bits/basic_string.tcc \
   /usr/include/c++/14/bits/char_traits.h \
@@ -285,12 +200,9 @@
   /usr/include/c++/14/bits/hashtable_policy.h \
   /usr/include/c++/14/bits/invoke.h \
   /usr/include/c++/14/bits/ios_base.h \
-  /usr/include/c++/14/bits/istream.tcc \
   /usr/include/c++/14/bits/list.tcc \
   /usr/include/c++/14/bits/locale_classes.h \
   /usr/include/c++/14/bits/locale_classes.tcc \
-  /usr/include/c++/14/bits/locale_facets.h \
-  /usr/include/c++/14/bits/locale_facets.tcc \
   /usr/include/c++/14/bits/localefwd.h \
   /usr/include/c++/14/bits/memory_resource.h \
   /usr/include/c++/14/bits/memoryfwd.h \
@@ -298,7 +210,6 @@
   /usr/include/c++/14/bits/nested_exception.h \
   /usr/include/c++/14/bits/new_allocator.h \
   /usr/include/c++/14/bits/node_handle.h \
-  /usr/include/c++/14/bits/ostream.tcc \
   /usr/include/c++/14/bits/ostream_insert.h \
   /usr/include/c++/14/bits/parse_numbers.h \
   /usr/include/c++/14/bits/postypes.h \
@@ -349,7 +260,6 @@
   /usr/include/c++/14/cctype \
   /usr/include/c++/14/cerrno \
   /usr/include/c++/14/chrono \
-  /usr/include/c++/14/climits \
   /usr/include/c++/14/clocale \
   /usr/include/c++/14/cmath \
   /usr/include/c++/14/compare \
@@ -361,7 +271,6 @@
   /usr/include/c++/14/cstring \
   /usr/include/c++/14/ctime \
   /usr/include/c++/14/cwchar \
-  /usr/include/c++/14/cwctype \
   /usr/include/c++/14/debug/assertions.h \
   /usr/include/c++/14/debug/debug.h \
   /usr/include/c++/14/exception \
@@ -374,10 +283,7 @@
   /usr/include/c++/14/ext/type_traits.h \
   /usr/include/c++/14/functional \
   /usr/include/c++/14/initializer_list \
-  /usr/include/c++/14/ios \
   /usr/include/c++/14/iosfwd \
-  /usr/include/c++/14/iostream \
-  /usr/include/c++/14/istream \
   /usr/include/c++/14/iterator \
   /usr/include/c++/14/limits \
   /usr/include/c++/14/list \
@@ -386,7 +292,6 @@
   /usr/include/c++/14/new \
   /usr/include/c++/14/numeric \
   /usr/include/c++/14/optional \
-  /usr/include/c++/14/ostream \
   /usr/include/c++/14/pstl/execution_defs.h \
   /usr/include/c++/14/pstl/glue_numeric_defs.h \
   /usr/include/c++/14/ratio \
@@ -419,8 +324,6 @@
   /usr/include/c++/14/x86_64-redhat-linux/bits/c++config.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/c++locale.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/cpu_defines.h \
-  /usr/include/c++/14/x86_64-redhat-linux/bits/ctype_base.h \
-  /usr/include/c++/14/x86_64-redhat-linux/bits/ctype_inline.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/error_constants.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/gthr-default.h \
   /usr/include/c++/14/x86_64-redhat-linux/bits/gthr.h \
@@ -432,9 +335,7 @@
   /usr/include/features.h \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
-  /usr/include/limits.h \
   /usr/include/linux/errno.h \
-  /usr/include/linux/limits.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -449,7 +350,6 @@
   /usr/include/sys/types.h \
   /usr/include/time.h \
   /usr/include/wchar.h \
-  /usr/include/wctype.h \
   /usr/lib/gcc/x86_64-redhat-linux/14/include/stdarg.h \
   /usr/lib/gcc/x86_64-redhat-linux/14/include/stdbool.h \
   /usr/lib/gcc/x86_64-redhat-linux/14/include/stddef.h

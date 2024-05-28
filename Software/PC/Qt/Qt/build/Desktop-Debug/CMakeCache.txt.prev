@@ -211,7 +211,7 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 CMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/.qtc/package-manager/auto-setup.cmake
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Qt
+CMAKE_PROJECT_NAME:STATIC=terminal
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.1
@@ -416,6 +416,15 @@ mine_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 mine_SOURCE_DIR:STATIC=/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt
+
+//Value Computed by CMake
+terminal_BINARY_DIR:STATIC=/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug
+
+//Value Computed by CMake
+terminal_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+terminal_SOURCE_DIR:STATIC=/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt
 
 
 ########################

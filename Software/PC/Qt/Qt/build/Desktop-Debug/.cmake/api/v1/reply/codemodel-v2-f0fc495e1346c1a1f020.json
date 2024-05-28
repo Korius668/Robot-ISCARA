@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-dfb613a964c508537282.json",
+					"jsonFile" : "directory-.-Debug-56dbf4cb52e7dbb11ede.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "terminal::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-terminal-Debug-62bc051742d05e0d10c7.json",
+					"jsonFile" : "target-terminal-Debug-093ba3648c3b589fd2ab.json",
 					"name" : "terminal",
 					"projectIndex" : 0
 				},

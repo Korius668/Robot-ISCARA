@@ -2,9 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
 #include "serialcommunication.h"
 
+
+#define TIMER_TIME 1000
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -20,7 +21,16 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void comboBoxSetup();
+
 private:
     Ui::MainWindow *ui;
+    SerialCommunication serial;
+    QTimer *timer;
 };
+
+
 #endif // MAINWINDOW_H
+
+

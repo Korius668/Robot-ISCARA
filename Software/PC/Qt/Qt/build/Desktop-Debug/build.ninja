@@ -190,7 +190,7 @@ build terminal_autogen/timestamp terminal_autogen/mocs_compilation.cpp | ${cmake
 #############################################
 # Phony custom command for CMakeFiles/terminal_autogen_timestamp_deps
 
-build CMakeFiles/terminal_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/terminal_autogen_timestamp_deps: phony /home/jchlopak/Qt/6.7.1/gcc_64/./libexec/moc /home/jchlopak/Qt/6.7.1/gcc_64/lib/libQt6Core.so.6.7.1 /home/jchlopak/Qt/6.7.1/gcc_64/./libexec/uic
+build CMakeFiles/terminal_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/terminal_autogen_timestamp_deps: phony /home/jchlopak/Qt/6.7.1/gcc_64/lib/libQt6Core.so.6.7.1 /home/jchlopak/Qt/6.7.1/gcc_64/./libexec/moc /home/jchlopak/Qt/6.7.1/gcc_64/./libexec/uic
 
 
 #############################################

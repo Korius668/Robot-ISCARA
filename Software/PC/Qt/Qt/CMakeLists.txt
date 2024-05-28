@@ -15,6 +15,8 @@ qt_add_executable(terminal
     serialcommunication.cpp serialcommunication.h
     main.cpp
     mainwindow.cpp mainwindow.h mainwindow.ui
+
+
 )
 
 set_target_properties(terminal PROPERTIES
