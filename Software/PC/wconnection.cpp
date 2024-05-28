@@ -5,8 +5,27 @@
 Arduino::Arduino(std::string port, std::string* readData, std::string* writeData):
 port(port),readData(readData),writeData(writeData)
 {
-    HANDLE hSerial = CreateFile(port.c_str(), GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-
+    hSerial = CreateFile(port.c_str(), GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (hSerial == INVALID_HANDLE_VALUE) {
+        // Obsługa błędu
+        throw std::runtime_error("Nie można otworzyć portu szeregowego");
+    }
+    /*
+    DCB dcbSerialParams = { 0 };
+    dcbSerialParams.DCBlength = sizeof(dcbSerialParams);
+    if (!GetCommState(hSerial, &dcbSerialParams)) {
+        // Obsługa błędu
+        throw std::runtime_error("Nie można uzyskać stanu portu szeregowego");
+    }
+    dcbSerialParams.BaudRate = CBR_9600;
+    //dcbSerialParams.ByteSize = 8;
+    dcbSerialParams.StopBits = TWOSTOPBITS;
+    dcbSerialParams.Parity = NOPARITY;
+    if (!SetCommState(hSerial, &dcbSerialParams)) {
+        // Obsługa błędu
+        throw std::runtime_error("Nie można skonfigurować portu szeregowego");
+    }
+    */
 }
 
 Arduino::~Arduino()
@@ -30,7 +49,13 @@ WriteFile(hSerial, data, data->size(), &bytesWritten, NULL);
 std::string Arduino::readFromPort() 
 {
 DWORD bytesRead;
-ReadFile(hSerial, readBuffer, sizeof(readBuffer), &bytesRead, NULL);
+char readBuffer[255];
+bool result =ReadFile(hSerial, readBuffer, sizeof(readBuffer), &bytesRead, NULL);
+if (!result) 
+{
+        // Obsługa błędu odczytu
+        throw std::runtime_error("Błąd odczytu z portu szeregowego");
+}
 *readData = std::string(readBuffer, bytesRead);
 return *readData;
 }

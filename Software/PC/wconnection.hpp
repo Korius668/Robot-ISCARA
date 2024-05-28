@@ -15,7 +15,7 @@ std::string port;
 HANDLE hSerial;
 std::string* writeData;
 std::string* readData;
-char readBuffer[256];
+
 
 public:
     Arduino(std::string port, std::string* readData, std::string* writeData);
