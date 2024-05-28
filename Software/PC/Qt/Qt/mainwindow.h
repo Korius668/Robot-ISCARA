@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 
+#include "serialcommunication.h"
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;

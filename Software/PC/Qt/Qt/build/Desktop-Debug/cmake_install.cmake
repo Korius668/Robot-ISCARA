@@ -43,21 +43,21 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Qt" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Qt")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/examples/serialport/terminal/terminal" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/examples/serialport/terminal/terminal")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Qt"
-         RPATH "")
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/examples/serialport/terminal/terminal"
+         RPATH "\$ORIGIN:\$ORIGIN/../lib64")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/Qt")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Qt" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Qt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/examples/serialport/terminal" TYPE EXECUTABLE FILES "/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/terminal")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/examples/serialport/terminal/terminal" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/examples/serialport/terminal/terminal")
     file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Qt"
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/examples/serialport/terminal/terminal"
          OLD_RPATH "/home/jchlopak/Qt/6.7.1/gcc_64/lib:"
-         NEW_RPATH "")
+         NEW_RPATH "\$ORIGIN:\$ORIGIN/../lib64")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/Qt")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/examples/serialport/terminal/terminal")
     endif()
   endif()
 endif()

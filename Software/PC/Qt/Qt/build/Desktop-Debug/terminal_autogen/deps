@@ -1,4 +1,4 @@
-Qt_autogen/timestamp: \
+terminal_autogen/timestamp: \
 	/home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/QCoreApplication \
 	/home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/QDebug \
 	/home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/QObject \
@@ -460,7 +460,7 @@ Qt_autogen/timestamp: \
 	/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/.qtc/package-manager/auto-setup.cmake \
 	/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/CMakeFiles/3.27.7/CMakeCXXCompiler.cmake \
 	/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/CMakeFiles/3.27.7/CMakeSystem.cmake \
-	/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/Qt_autogen/moc_predefs.h \
+	/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/terminal_autogen/moc_predefs.h \
 	/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/main.cpp \
 	/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/mainwindow.cpp \
 	/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/mainwindow.h \

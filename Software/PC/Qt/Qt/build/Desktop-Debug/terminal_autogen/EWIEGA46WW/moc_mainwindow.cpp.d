@@ -1,5 +1,5 @@
-/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/Qt_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/mainwindow.h \
-  /home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/Qt_autogen/moc_predefs.h \
+/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/terminal_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/mainwindow.h \
+  /home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/terminal_autogen/moc_predefs.h \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/QCoreApplication \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/QDebug \
   /home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore/QObject \

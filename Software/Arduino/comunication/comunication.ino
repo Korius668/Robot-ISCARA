@@ -6,7 +6,9 @@ void loop() {
   if (Serial.available()) { // Jeżeli są dostępne dane do odczytu
     char receivedChar = Serial.read(); // Odczytaj odebrane dane
 
+
     if (receivedChar == 'H') { // Jeżeli otrzymaliśmy zapytanie o "H"
+      Serial.println(receivedChar);
       Serial.println("Hello from Arduino!"); // Wysyłamy odpowiedź "Hello from Arduino!"
     }
   }
