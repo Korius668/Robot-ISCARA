@@ -29,7 +29,6 @@ public:
     std::string readFromPort();
 };
 
-bool configureSerialPort(FILE* hSerial, int speed);
 bool testSerialPort(const std::string& portName, int speed, int maxAttempts, int delayBetweenAttemptsMillis);
 std::vector<std::string> findSerialPorts(int speed);
 std::string fromArduino(std::string port);

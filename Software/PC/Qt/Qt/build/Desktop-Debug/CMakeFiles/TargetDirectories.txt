@@ -1,0 +1,9 @@
+/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/CMakeFiles/Qt.dir
+/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/CMakeFiles/install.dir
+/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/CMakeFiles/install/local.dir
+/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/CMakeFiles/install/strip.dir
+/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/CMakeFiles/Qt_autogen_timestamp_deps.dir
+/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/CMakeFiles/Qt_autogen.dir

@@ -31,22 +31,7 @@ Arduino::~Arduino()
     close(fd);
 }
 
-void Arduino::writeToPort() 
-{
-write(fd, writeData, writeData->size());
-}
 
-void Arduino::writeToPort(std::string* data) 
-{
-write(fd, data, data->size());
-}
-
-std::string Arduino::readFromPort() 
-{
-ssize_t bytesRead=read(fd, readBuffer, sizeof(readBuffer));
-*readData = std::string(readBuffer, bytesRead);
-return *readData;
-}
 
 std::string fromArduino(std::string port)
 {
@@ -74,7 +59,30 @@ std::string fromArduino(std::string port)
 
     tcsetattr(fd, TCSANOW, &options);
 
-    fcntl(fd, F_SETFL, FNDELAY); // Non-blocking mode
+    // Ustawienie trybu nieblokującego
+    fcntl(fd, F_SETFL, 0);
+
+    // Struktura dla select()
+    fd_set readfds;
+    FD_ZERO(&readfds);
+    FD_SET(fd, &readfds);
+
+    // Ustawienie limitu czasu na 5 sekund
+    struct timeval timeout;
+    timeout.tv_sec = 10;
+    timeout.tv_usec = 0;
+
+    // Oczekiwanie na dane do odczytu
+    int ret = select(fd + 1, &readfds, NULL, NULL, &timeout);
+    if (ret == -1) {
+        std::cerr << "Error during select!" << std::endl;
+        close(fd);
+        return "Pusto";
+    } else if (ret == 0) {
+        std::cerr << "Timeout waiting for data!" << std::endl;
+        close(fd);
+        return "Pusto";
+    }
 
     char readBuffer[256];
     ssize_t bytesRead = read(fd, readBuffer, sizeof(readBuffer));
@@ -87,8 +95,7 @@ std::string fromArduino(std::string port)
     readData = std::string(readBuffer, bytesRead);
     close(fd);
 
-
-    // Wyświetlamy otrzymaną odpowiedź
+    // Wyświetlanie otrzymanej odpowiedzi
     std::cout << "Received: " << readData << std::endl;
 
     return readData;
