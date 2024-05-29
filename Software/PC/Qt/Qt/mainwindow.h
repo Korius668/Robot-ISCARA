@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include "serialcommunication.h"
 
-
 #define TIMER_TIME 1000
 
 QT_BEGIN_NAMESPACE
@@ -21,13 +20,24 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void setConnectButton(bool state){connectButtonStatus = state;}
+    void setDisconnectButton(bool state){disconnectButtonStatus = state;}
+
+    bool getConnectButton(){return connectButtonStatus;}
+    bool getDisconnectButton(){return disconnectButtonStatus;}
+
 public slots:
-    void comboBoxSetup();
+    void comboBoxSetup();       // Port selection update
+    void connectButton();       // Connect button action
+    void disconnectButton();    // Disconnect button action
 
 private:
     Ui::MainWindow *ui;
-    SerialCommunication serial;
-    QTimer *timer;
+    SerialCommunication *serial;
+    QTimer *timer;          // timer for port refresh
+
+    bool connectButtonStatus;
+    bool disconnectButtonStatus;
 };
 
 

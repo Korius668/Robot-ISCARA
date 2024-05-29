@@ -16,11 +16,11 @@ using namespace std;
 class SerialCommunication
 {
 private:
-    vector <QString> ports;
-    QString currentPort = NULL;
-    int portCount;
-
-    int baudRate = 9600;
+    vector <QString> ports; // available ports names
+    int portCount;          // available ports count
+    QString currentPort;    // current port name
+    QSerialPort *serialPort;
+    bool connectionStatus;
 
 public:
     SerialCommunication();
@@ -28,8 +28,13 @@ public:
     int portCounter(){return portCount;}
     QString portName(int id){return ports[id];}
 
-    void getPorts();
-    void setPort();
+    bool getPorts();
+    void setPort(QString portName);
+
+    bool openSerialPort();
+    bool closeSerialPort();
+
+    void writeData(const QByteArray &data);
 };
 
 #endif // SERIALCOMMUNICATION_H

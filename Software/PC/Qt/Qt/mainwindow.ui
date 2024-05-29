@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1534</width>
-    <height>930</height>
+    <width>1231</width>
+    <height>377</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -23,11 +23,37 @@
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>140</y>
-      <width>79</width>
+      <x>220</x>
+      <y>90</y>
+      <width>171</width>
+      <height>51</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>160</y>
+      <width>86</width>
       <height>26</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>Connect</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>160</y>
+      <width>86</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Disconnect</string>
     </property>
    </widget>
   </widget>
@@ -36,7 +62,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1534</width>
+     <width>1231</width>
      <height>23</height>
     </rect>
    </property>
