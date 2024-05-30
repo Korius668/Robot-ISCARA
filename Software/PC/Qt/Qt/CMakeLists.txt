@@ -7,7 +7,7 @@ endif()
 
 set(INSTALL_EXAMPLEDIR "${INSTALL_EXAMPLESDIR}/serialport/terminal")
 
-find_package(Qt6 REQUIRED COMPONENTS Core Gui SerialPort Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui SerialPort Widgets Core5Compat)
 
 qt_standard_project_setup()
 
@@ -15,6 +15,7 @@ qt_add_executable(terminal
     serialcommunication.cpp serialcommunication.h
     main.cpp
     mainwindow.cpp mainwindow.h mainwindow.ui
+
 )
 
 set_target_properties(terminal PROPERTIES
@@ -27,6 +28,7 @@ target_link_libraries(terminal PRIVATE
     Qt::Gui
     Qt::SerialPort
     Qt::Widgets
+    Qt6::Core5Compat
 )
 
 
