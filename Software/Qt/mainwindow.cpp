@@ -89,7 +89,6 @@ void MainWindow::transferData(){
     ui->lineEdit->clear();
     if (data.size() > 0){
         sendWriteDataToDisplay(data);
-        qDebug() << data;
     }
 }
 
