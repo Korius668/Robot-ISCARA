@@ -1,15 +1,23 @@
 #include "serialcommunication.h"
-using namespace std;
-
 
 SerialCommunication::SerialCommunication() {
     this->portCount = 0;
     this->currentPort = NULL;
-    this->connectionStatus = false;
+    this->dataReaded = NULL;
+    this->dataReadedBuffor = NULL;
+    this->dataSent = NULL;
     getPorts();
 
     this->serialPort = new QSerialPort;
+    connect(serialPort , &QSerialPort::readyRead, this, &SerialCommunication::readDataSymbol);
+
+    this->timerSymbolRead = new QTimer;
+    connect(timerSymbolRead, &QTimer::timeout, this, &SerialCommunication::readDataReady);
+
+    this->commandTimer = new QTimer;
+    connect(commandTimer, &QTimer::timeout, this, &SerialCommunication::checkConnectionStatus);
 }
+
 
 bool SerialCommunication::getPorts(){
     const auto serialPortInfos = QSerialPortInfo::availablePorts();
@@ -30,7 +38,6 @@ bool SerialCommunication::getPorts(){
                 ports.push_back(info.portName());
         }
     }
-
     // deleting old ports
     if (portsSize < portCount){
         for (int i = 0; i < portCount; i++){
@@ -54,44 +61,59 @@ bool SerialCommunication::getPorts(){
 }
 
 
-void SerialCommunication::setPort(QString portName){
-    this->currentPort = portName;
+void SerialCommunication::openSerialPort(){
+    //settings
+    serialPort->setPortName( currentPort );
+    serialPort->setBaudRate(QSerialPort::Baud9600);
+    serialPort->setParity(QSerialPort::Parity::NoParity);
+    serialPort->setDataBits(QSerialPort::DataBits::Data8);
+    serialPort->setStopBits(QSerialPort::StopBits::TwoStop);
+    serialPort->open(QIODevice::ReadWrite);
+    checkConnection();
 }
 
-bool SerialCommunication::openSerialPort(){
-    bool returnStatus = false;
-    if (connectionStatus == false){
-        //settings
-        serialPort->setPortName( currentPort );
-        serialPort->setBaudRate(QSerialPort::Baud9600);
-        serialPort->setParity(QSerialPort::Parity::NoParity);
-        serialPort->setDataBits(QSerialPort::DataBits::Data8);
-        serialPort->setStopBits(QSerialPort::StopBits::TwoStop);
-        if (serialPort->open(QIODevice::ReadWrite)) {
-            connectionStatus = true;
-            returnStatus = true;
-        }
-    }
-    return returnStatus;
+void SerialCommunication::closeSerialPort(){
+    serialPort->close();
+    checkConnection();
 }
 
-bool SerialCommunication::closeSerialPort(){
-    bool returnStatus = false;
-    if (connectionStatus == true){
-        serialPort->close();
-        connectionStatus = false;
-        currentPort = NULL;
-        returnStatus = true;
-    }
-    return returnStatus;
+void SerialCommunication::checkConnection(){
+    dataReaded = "Random";
+    writeData("Communication Test");
+    commandTimer->start(COMMAND_CHECK_TIME);
 }
 
-void SerialCommunication::writeData(const QByteArray &data){
-    if (connectionStatus == true){
-        const qint64 written = serialPort->write(data);
+void SerialCommunication::checkConnectionStatus(){
+    bool status = false;
+    commandTimer->stop();
+    if (dataReaded == dataSent)
+        status = true;
+    emit connectionTestStatus(status);
+}
+
+void SerialCommunication::writeData(QString data){
+    dataSent = NULL;
+    const QByteArray convertedData = data.toUtf8();
+        const qint64 written = serialPort->write(convertedData);
         if (written == data.size()) {
+            dataSent = data;
         } else {
-            printf("Error\n");
+            emit infoDataAvailable("Error. Part of data is lost.");
         }
-    }
+}
+
+void SerialCommunication::readDataSymbol()
+{
+    dataReaded = NULL;
+    timerSymbolRead->start(SYMBOL_READ_TIME);
+    const QByteArray data = serialPort->readAll();
+    QString convertedData = QString::fromStdString(data.toStdString());
+    dataReadedBuffor.append(convertedData);
+}
+void SerialCommunication::readDataReady(){
+    timerSymbolRead->stop();
+    dataReadedBuffor = dataReadedBuffor.trimmed();
+    dataReaded = dataReadedBuffor;
+    emit readDataAvailable(dataReadedBuffor);
+    dataReadedBuffor = NULL;
 }

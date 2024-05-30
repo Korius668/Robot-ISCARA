@@ -351,6 +351,9 @@ QT_DIR:PATH=/home/jchlopak/Qt/6.7.1/gcc_64/lib/cmake/Qt6
 //No help, variable specified on the command line.
 QT_QMAKE_EXECUTABLE:FILEPATH=/home/jchlopak/Qt/6.7.1/gcc_64/bin/qmake
 
+//The directory containing a CMake configuration file for Qt6Core5Compat.
+Qt6Core5Compat_DIR:PATH=/home/jchlopak/Qt/6.7.1/gcc_64/lib/cmake/Qt6Core5Compat
+
 //The directory containing a CMake configuration file for Qt6CoreTools.
 Qt6CoreTools_DIR:PATH=/home/jchlopak/Qt/6.7.1/gcc_64/lib/cmake/Qt6CoreTools
 
@@ -723,6 +726,8 @@ QT_FEATURE_avx512vbmi2:INTERNAL=ON
 QT_FEATURE_avx512vl:INTERNAL=ON
 //Qt feature: backtrace (from target Qt6::Core)
 QT_FEATURE_backtrace:INTERNAL=ON
+//Qt feature: big_codecs (from target Qt6::Core5Compat)
+QT_FEATURE_big_codecs:INTERNAL=ON
 //Qt feature: buttongroup (from target Qt6::Widgets)
 QT_FEATURE_buttongroup:INTERNAL=ON
 //Qt feature: calendarwidget (from target Qt6::Widgets)
@@ -741,6 +746,8 @@ QT_FEATURE_clock_gettime:INTERNAL=ON
 QT_FEATURE_clock_monotonic:INTERNAL=ON
 //Qt feature: close_range (from target Qt6::Core)
 QT_FEATURE_close_range:INTERNAL=OFF
+//Qt feature: codecs (from target Qt6::Core5Compat)
+QT_FEATURE_codecs:INTERNAL=ON
 //Qt feature: colordialog (from target Qt6::Widgets)
 QT_FEATURE_colordialog:INTERNAL=ON
 //Qt feature: colornames (from target Qt6::Gui)
@@ -941,6 +948,8 @@ QT_FEATURE_highdpiscaling:INTERNAL=ON
 QT_FEATURE_hijricalendar:INTERNAL=ON
 //Qt feature: ico (from target Qt6::Gui)
 QT_FEATURE_ico:INTERNAL=ON
+//Qt feature: iconv (from target Qt6::Core5Compat)
+QT_FEATURE_iconv:INTERNAL=OFF
 //Qt feature: icu (from target Qt6::Core)
 QT_FEATURE_icu:INTERNAL=ON
 //Qt feature: identityproxymodel (from target Qt6::Core)
@@ -1285,6 +1294,8 @@ QT_FEATURE_temporaryfile:INTERNAL=ON
 QT_FEATURE_testlib:INTERNAL=ON
 //Qt feature: textbrowser (from target Qt6::Widgets)
 QT_FEATURE_textbrowser:INTERNAL=ON
+//Qt feature: textcodec (from target Qt6::Core5Compat)
+QT_FEATURE_textcodec:INTERNAL=ON
 //Qt feature: textdate (from target Qt6::Core)
 QT_FEATURE_textdate:INTERNAL=ON
 //Qt feature: textedit (from target Qt6::Widgets)

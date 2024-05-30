@@ -205,6 +205,7 @@
 #define __REGISTER_PREFIX__ 
 #define __UINT16_MAX__ 0xffff
 #define __FLT128_HAS_INFINITY__ 1
+#define QT_CORE5COMPAT_LIB 1
 #define __FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32
 #define __UINT8_TYPE__ unsigned char
 #define __FLT_DIG__ 6

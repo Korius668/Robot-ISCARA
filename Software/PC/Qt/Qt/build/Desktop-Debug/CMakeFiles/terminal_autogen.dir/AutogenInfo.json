@@ -364,6 +364,15 @@
 		"/home/jchlopak/Qt/6.7.1/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake",
 		"/home/jchlopak/Qt/6.7.1/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake",
 		"/home/jchlopak/Qt/6.7.1/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake",
+		"/home/jchlopak/Qt/6.7.1/gcc_64/lib/cmake/Qt6Core5Compat/Qt6Core5CompatConfigVersion.cmake",
+		"/home/jchlopak/Qt/6.7.1/gcc_64/lib/cmake/Qt6Core5Compat/Qt6Core5CompatConfigVersionImpl.cmake",
+		"/home/jchlopak/Qt/6.7.1/gcc_64/lib/cmake/Qt6Core5Compat/Qt6Core5CompatConfig.cmake",
+		"/home/jchlopak/Qt/Tools/CMake/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/jchlopak/Qt/6.7.1/gcc_64/lib/cmake/Qt6Core5Compat/Qt6Core5CompatDependencies.cmake",
+		"/home/jchlopak/Qt/6.7.1/gcc_64/lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargets.cmake",
+		"/home/jchlopak/Qt/6.7.1/gcc_64/lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargets-relwithdebinfo.cmake",
+		"/home/jchlopak/Qt/6.7.1/gcc_64/lib/cmake/Qt6Core5Compat/Qt6Core5CompatAdditionalTargetInfo.cmake",
+		"/home/jchlopak/Qt/6.7.1/gcc_64/lib/cmake/Qt6Core5Compat/Qt6Core5CompatVersionlessTargets.cmake",
 		"/home/jchlopak/Qt/Tools/CMake/share/cmake-3.27/Modules/GNUInstallDirs.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt",
@@ -387,7 +396,14 @@
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/terminal_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/jchlopak/Robot-ISCARA/Software/PC/Qt/Qt/build/Desktop-Debug/terminal_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_SERIALPORT_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CORE5COMPAT_LIB",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_SERIALPORT_LIB",
+		"QT_WIDGETS_LIB"
+	],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -403,6 +419,7 @@
 		"/home/jchlopak/Qt/6.7.1/gcc_64/include/QtGui",
 		"/home/jchlopak/Qt/6.7.1/gcc_64/include/QtSerialPort",
 		"/home/jchlopak/Qt/6.7.1/gcc_64/include/QtWidgets",
+		"/home/jchlopak/Qt/6.7.1/gcc_64/include/QtCore5Compat",
 		"/usr/include",
 		"/usr/include/c++/14",
 		"/usr/include/c++/14/x86_64-redhat-linux",
