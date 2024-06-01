@@ -31,7 +31,7 @@ String receivedString = "";
 Cartesian cpos; //  Cartesian current position
 Joint jpos;     //  Joint current position
 
-enum Funct{ MOVE,MOVEJ,POINT,POINTJ,UNKNOWN };
+enum Funct{ MOVE,MOVEJ,POINT,POINTJ,UNKNOWN,CONNECT };
 
 enum Funct getFunct(const char *str) 
 {
@@ -39,6 +39,7 @@ enum Funct getFunct(const char *str)
     if(strcmp(str, "MOVEJ") == 0 || strcmp(str, "movej") == 0) return MOVEJ;
     if(strcmp(str, "POINT") == 0 || strcmp(str, "point") == 0) return POINT;
     if(strcmp(str, "POINTJ") == 0 || strcmp(str, "pointj") == 0) return POINTJ;
+    if(strcmp(str, "CONNECT")==0 || strcmp(str, "connect") == 0) return CONNECT;
     return UNKNOWN;
 }
 
@@ -85,23 +86,13 @@ Joint inverseKinematics(Cartesian target)
 
 void communication()
 {
-  if (Serial.available() > 0)
+  
+  if (Serial.available())
   {
-    while (Serial.available() > 0)
-    {
-      char receivedChar = Serial.read(); // Odczytanie pojedynczego znaku
-      if (receivedChar != '\n')
-      {
-        receivedString += receivedChar; // Dodanie odczytanego znaku do otrzymanej linii tekstu
-      }
-      else
-      {
-        Serial.print("Received: ");
-        Serial.println(receivedString);
-        interpretacja(receivedString);
-        receivedString = "";
-      }
-    }
+    String receivedString = Serial.readStringUntil('\n'); // Dodanie odczytanego znaku do otrzymanej linii tekstu
+      //Serial.print(receivedString);
+      interpretacja(receivedString);
+      receivedString = "";
   }
 }
 
@@ -164,6 +155,10 @@ void interpretacja(String &komenda)
   //arg = komenda.substring(bracket1+1,bracket2-1);
   switch (getFunct(k1->c_str()))
   {
+    case CONNECT:
+    Serial.println("#CONNECT#");
+    break;
+
     case POINT:
       if(hash.size()-1==3)
       {
@@ -288,9 +283,9 @@ void interpretacja(String &komenda)
 void setup()
 {
   servoMotor.attach(servoPin);  // Attach the servo to the pin
-  Serial.begin(9600);
+  Serial.begin(9600,SERIAL_8N2);
   threads.begin();
-  threads.addTask(communication, threads.convertMs(1000));
+  threads.addTask(communication, threads.convertMs(500));
 }
 
 void loop()
