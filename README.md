@@ -3,9 +3,9 @@ To repozytorium projektu Robot ISCARA.
 ## ISCARA
 Czyli inaczej inverse-SCARA. To co różni naszego robota od zwykłego SCARA jest to, że człon postępowy znajduje się na początku naszego łańcucha kinematycznego, a nie jak w robotach SCARA na końcu. 
 
-## Części mechaniczne
+## Część mechaniczna
 ![Projekt robota](./ReadmeImg/robot.png)
-## Części elektroniczne
+## Część elektroniczna
 ## Oprogramowanie
 ### Arduino
 Plik `Robot-ISCARA/Software/Arduino/Communication/communication.ino` należy wgrać na arduino.
