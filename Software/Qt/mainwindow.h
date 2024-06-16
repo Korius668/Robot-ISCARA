@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QLineEdit>
 #include <QPlainTextEdit>
+#include <iostream>
 
 #include "serialcommunication.h"
 #include "interpreter.h"
@@ -56,6 +57,8 @@ private:
     bool connectButtonStatus;
     bool disconnectButtonStatus;
     bool textEditorStatus;
+
+    void errorFunction(int error);
 
 };
 

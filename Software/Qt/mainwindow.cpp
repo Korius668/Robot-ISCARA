@@ -61,11 +61,6 @@ void MainWindow::comboBoxSetup(){
 
 // function for connect button action
 void MainWindow::connectButton(){
-  //  interpreter->interpretation("MOVEJ.P(100.3,2,44,5)");
-    robotVariables->forwardKinematics( {200, 90, -180, 90} );
-
-
-
     if (getConnectButton() == true){
         serial->setPort( ui->comboBox->currentText() );
         serial->openSerialPort();
@@ -97,9 +92,13 @@ void MainWindow::setConnectionStatus(bool status){
 
 void MainWindow::transferData(){
     QString data = ui->lineEdit->displayText();
+    string validatedData;
+    validatedData.clear();
     ui->lineEdit->clear();
-    if (data.size() > 0){
-        sendWriteDataToDisplay(data);
+    errorFunction( interpreter->interpretation(data.toStdString(), &validatedData) );
+
+    if (validatedData.size() > 0){
+        sendWriteDataToDisplay( QString::fromStdString( validatedData ) );
     }
 }
 
@@ -158,6 +157,23 @@ void MainWindow::setSerialInfoTable(QString port, QString baudRate, QString data
     ui->lineEdit_9->insert(stopBits);
 }
 
+void MainWindow::errorFunction(int error){
+    switch (error){
+    case 0 :
+        break;
+    case 1:
+        sendInfoDataToDisplay("Wrong format of function");
+        break;
+    case 2:
+        sendInfoDataToDisplay("Function does not exist");
+        break;
+    case 3:
+        sendInfoDataToDisplay("Argument outside limits");
 
-
-
+    case 4:
+        sendInfoDataToDisplay("Position unreachable");
+        break;
+    default:
+        break;
+    }
+}
