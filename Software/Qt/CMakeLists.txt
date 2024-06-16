@@ -15,7 +15,9 @@ qt_add_executable(iSCARA_Application
     serialcommunication.cpp serialcommunication.h
     main.cpp
     mainwindow.cpp mainwindow.h mainwindow.ui
-
+    interpreter.h interpreter.cpp
+    robotvariables.hpp robotvariables.cpp
+    function.h
 )
 
 set_target_properties(iSCARA_Application PROPERTIES

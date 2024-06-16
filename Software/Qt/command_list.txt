@@ -1,0 +1,6 @@
+START()
+END()
+MOVE( x_position, y_position, z_position, yaw )
+ACCEL( percentage )
+SPEED( percentage )
+GRIPPER( state )
