@@ -7,8 +7,8 @@ class RobotVariables
 {
 private:
     const double    a1 = 20,
-                    a2 = 213,
-                    a3 = 97.5,
+                    a2 = 200,
+                    a3 = 100,
                     d4 = 150;
 
     const double    max_d1  =   600,
@@ -37,7 +37,9 @@ private:
             current_z,
             current_yaw;
 
-    unsigned int gripperId;
+    unsigned int gripperId; // type of gripper
+    bool kinematicsConfig;  // kinematics congifuration preferred
+
 
 public:
             RobotVariables();
@@ -50,6 +52,8 @@ public:
     void    setCurrent_y(double y)      {this->current_y = y;}
     void    setCurrent_z(double z)      {this->current_z = z;}
     void    setCurrent_yaw(double yaw)  {this->current_yaw = yaw;}
+    void  setKinematicsConfig(bool con) {this->kinematicsConfig = con;}
+
 
     double  getCurrent_d1()             {return current_d1;}
     double  getCurrent_th2()            {return current_th2;}
@@ -70,16 +74,19 @@ public:
     double  getMin_th4()                {return min_th4;}
     double  getMaxPercentage()          {return max_percentage;}
     double  getMinPercentage()          {return min_percentage;}
+    bool    getKinematicsConfig()       {return kinematicsConfig;}
 
 
 private:
     void                    setGripperId(unsigned int Id)   { this->gripperId = Id; }
     unsigned int            getGripperId()                  { return gripperId; }
+    double                  deg2rad(double deg)             { return (deg/180) * 3.141592653589; }
+    double                  rad2deg(double rad)             { return (rad / 3.141592653589) * 180; }
+
 public:
-    std::vector<double>     inverseKinematics(std::vector<double> cartesian);
-    std::vector<double>     forwardKinematics(std::vector<double> joint);
-    double                  deg2rad(double deg) { return (deg/180) * 3.141592653589; }
-    double                  rad2deg(double rad) { return (rad / 3.141592653589) * 180; }
+    int                     inverseKinematics(std::vector<double>* cartesian, std::vector<double>* joint);
+    int                     forwardKinematics(std::vector<double>* joint, std::vector<double>* cartesian);
+
 };
 
 #endif // ROBOTVARIABLES_HPP
