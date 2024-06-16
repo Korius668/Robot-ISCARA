@@ -7,6 +7,8 @@
 #include <QPlainTextEdit>
 
 #include "serialcommunication.h"
+#include "interpreter.h"
+#include "robotvariables.hpp"
 
 #define TIMER_TIME 1000
 
@@ -47,6 +49,8 @@ private:
     Ui::MainWindow *ui              = nullptr;
     SerialCommunication *serial     = nullptr;
     QTimer *timer                   = nullptr;      // Timer for port refresh
+    Interpreter *interpreter        = nullptr;
+    RobotVariables *robotVariables  = nullptr;
 
     // ui widgets variables
     bool connectButtonStatus;

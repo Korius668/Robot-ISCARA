@@ -33,6 +33,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     // info table setup
     setSerialInfoTable("None", "None", "None", "None");
+
+    // robot settings
+    this->robotVariables = new RobotVariables;
+
+    // interpreter
+    this->interpreter = new Interpreter(robotVariables);
 }
 
 MainWindow::~MainWindow()
@@ -55,6 +61,11 @@ void MainWindow::comboBoxSetup(){
 
 // function for connect button action
 void MainWindow::connectButton(){
+  //  interpreter->interpretation("MOVEJ.P(100.3,2,44,5)");
+    robotVariables->forwardKinematics( {200, 90, -180, 90} );
+
+
+
     if (getConnectButton() == true){
         serial->setPort( ui->comboBox->currentText() );
         serial->openSerialPort();
@@ -146,3 +157,7 @@ void MainWindow::setSerialInfoTable(QString port, QString baudRate, QString data
     ui->lineEdit_8->insert(dataBits);
     ui->lineEdit_9->insert(stopBits);
 }
+
+
+
+
