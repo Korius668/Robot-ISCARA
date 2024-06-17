@@ -10,7 +10,7 @@ Interpreter::Interpreter(RobotVariables *RobotVariables) {
 
     this->robotVariables = RobotVariables;
 
-    //FUNCTION LIST
+    // FUNCTION LIST
     functionList.push_back( { "START",      0 } );
     functionList.push_back( { "STOP",       0 } );
     functionList.push_back( { "SPEED.H",    1 } );
@@ -22,9 +22,7 @@ Interpreter::Interpreter(RobotVariables *RobotVariables) {
     functionList.push_back( { "MOVE.P",     4 } );
     functionList.push_back( { "MOVEJ.P",    4 } );
     functionList.push_back( { "MOVEL.P",    4 } );
-
 }
-
 
 int Interpreter::interpretation(string command, string* response){
 
@@ -40,19 +38,18 @@ int Interpreter::interpretation(string command, string* response){
     jointParams.clear();
     cartesianParams.clear();
 
-    // PARSE COMMAND
+    // parse command
     error = parseString(command, &parsedString);
 
-    // CHECK SYNTAX
+    // check syntax
     if( error == 0 )
         error += checkSyntax(&parsedString, &functionNumber, &functionType);
 
-    // CONVERT PARAMETERS FROM STRING TO DOUBLE
+    // convert parameters from stirng to double
     if (error == 0)
         parameters = str2db(&parsedString);
 
-
-    // CONVERT PARAMETERS USING KINEMATICS AND CHECK LIMITS
+    // kinematics and limit check
     if (error == 0){
 
         // forward kinematics
@@ -78,6 +75,7 @@ int Interpreter::interpretation(string command, string* response){
 
     }
 
+    // prapare output function
     if (error == 0){
         *response = transfer(functionNumber, parameters);
     }
@@ -179,7 +177,6 @@ std::vector<double> Interpreter::str2db(const std::vector<std::string>* parsedSt
     return params;
 }
 
-
 string Interpreter::transfer(int functionNumber, vector<double> parameters){
     string output;
     string ph;
@@ -203,8 +200,6 @@ string Interpreter::transfer(int functionNumber, vector<double> parameters){
             cut = ph.size() - cut;
             while (cut > 3) {ph.pop_back(); cut--;}
         }
-        output.append( ph );
-        output.append( "#" );
     }
 
     return output;

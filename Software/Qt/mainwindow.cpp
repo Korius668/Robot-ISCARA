@@ -177,3 +177,38 @@ void MainWindow::errorFunction(int error){
         break;
     }
 }
+
+// help button action
+void MainWindow::on_pushButton_3_clicked()
+{
+    helpFunction();
+}
+
+// clear button action
+void MainWindow::on_pushButton_4_clicked()
+{
+    ui->plainTextEdit->clear();
+}
+
+void MainWindow::helpFunction(){
+    vector<Function> functions;
+    string communicate;
+    string name;
+    int parametersNumber;
+    communicate.append("FUNCTIONS AVAILABLE:\n");
+
+    functions = interpreter->getFunctionList();
+    if ( functions.size() > 0 ){
+        for (unsigned int i = 0 ; i < functions.size(); i++){
+            name.clear();
+            name.append( "- " );
+            name.append( functions[i].getName() );
+            parametersNumber = functions[i].getParametersNumber();
+            name.append("( ");
+            name.append( to_string(parametersNumber) );
+            name.append(" parameters )\n");
+            communicate.append( name );
+        }
+    }
+    sendInfoDataToDisplay( QString::fromStdString(communicate) );
+}

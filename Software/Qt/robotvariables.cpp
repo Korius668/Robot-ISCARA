@@ -25,8 +25,10 @@ int RobotVariables::inverseKinematics(std::vector<double>* cartesian, std::vecto
     cosA = ( pow(a2, 2) + pow(l, 2) - pow(a3, 2) ) / ( 2 * a2 * l );
     cosB = ( pow(a2, 2) + pow(a3, 2) - pow(l, 2) ) / ( 2 * a2 * a3 );
 
+    // is there a solution
     if ( ( cosA > 1 || cosA < -1 ) || ( cosB > 1 || cosB < -1 ) ) error = 3;
 
+    // calculate joint parameters
     if ( error == 0 ){
 
         A = rad2deg(acos(cosA));
@@ -55,7 +57,7 @@ int RobotVariables::inverseKinematics(std::vector<double>* cartesian, std::vecto
         while (th4 < -180) th4 += 360;
         while (th4 > 180) th4 -= 360;
 
-        // CHECK LIMITS
+        // check limits
         if      ( d1  > getMax_d1()  || d1  < getMin_d1()  )    error = 4;
         else if ( th2 > getMax_th2() || th2 < getMin_th2() )    error = 4;
         else if ( th3 > getMax_th3() || th3 < getMin_th3() )    error = 4;
@@ -82,12 +84,13 @@ int RobotVariables::forwardKinematics(std::vector<double>* joint, std::vector<do
                 th3 = *(joint->begin()+2),
                 th4 = *(joint->begin()+3);
 
-    // CHECK LIMITS
+    // check limits
     if      ( d1  > getMax_d1()  || d1  < getMin_d1()  )    error = 4;
     else if ( th2 > getMax_th2() || th2 < getMin_th2() )    error = 4;
     else if ( th3 > getMax_th3() || th3 < getMin_th3() )    error = 4;
     else if ( th4 > getMax_th4() || th4 < getMin_th4() )    error = 4;
 
+    // calculate cartesian parameters
     if ( error == 0){
 
         th2 = deg2rad(th2);

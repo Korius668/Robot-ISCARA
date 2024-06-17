@@ -10,6 +10,7 @@
 #include "serialcommunication.h"
 #include "interpreter.h"
 #include "robotvariables.hpp"
+#include "function.h"
 
 #define TIMER_TIME 1000
 
@@ -22,6 +23,7 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 public:
+
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -46,6 +48,10 @@ public slots:
     void sendWriteDataToDisplay(QString data);      // send serial write data text to terminal
     void setConnectionStatus(bool status);          // ui setup depending on serial port status
 
+private slots:
+    void on_pushButton_3_clicked();     // help button action
+    void on_pushButton_4_clicked();     // clear button action
+
 private:
     Ui::MainWindow *ui              = nullptr;
     SerialCommunication *serial     = nullptr;
@@ -58,7 +64,9 @@ private:
     bool disconnectButtonStatus;
     bool textEditorStatus;
 
-    void errorFunction(int error);
+    // support functions
+    void errorFunction  (int error);
+    void helpFunction   ();
 
 };
 
