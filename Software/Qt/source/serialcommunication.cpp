@@ -1,5 +1,4 @@
 #include "serialcommunication.h"
-#include <iostream>
 
 SerialCommunication::SerialCommunication() {
     this->portCount = 0;
@@ -95,11 +94,13 @@ void SerialCommunication::checkConnectionStatus(){
 void SerialCommunication::writeData(QString data){
     dataSent = NULL;
     const QByteArray convertedData = data.toUtf8();
-    serialPort->clear();
-    const qint64 written = serialPort->write(convertedData);
-    if (written == data.size()) {
-        dataSent = data;
-    }
+     //   serialPort->clear();
+        const qint64 written = serialPort->write(convertedData);
+        if (written == data.size()) {
+            dataSent = data;
+        } else {
+            emit infoDataAvailable("Error. Part of data is lost.");
+        }
 }
 
 void SerialCommunication::readDataSymbol()
