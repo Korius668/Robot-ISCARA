@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lineEdit->setMaxLength(30);
 
     // info table setup
-    setSerialInfoTable("NONE", "None", "None", "None");
+    setSerialInfoTable("None", "None", "None", "None");
 
     // robot settings
     this->robotVariables = new RobotVariables;
@@ -86,7 +86,7 @@ void MainWindow::setConnectionStatus(bool status){
         setDisconnectButton(false);
         setTextEditor(false);
         sendInfoDataToDisplay("Disconnected");
-        setSerialInfoTable("NONE", "None", "None", "None");
+        setSerialInfoTable("None", "None", "None", "None");
     }
 }
 
@@ -150,11 +150,6 @@ void MainWindow::setSerialInfoTable(QString port, QString baudRate, QString data
     ui->lineEdit_7->clear();
     ui->lineEdit_8->clear();
     ui->lineEdit_9->clear();
-
-    if (port == "NONE")
-        ui->lineEdit_6->setStyleSheet("color: red");
-    else
-        ui->lineEdit_6->setStyleSheet("color: green");
 
     ui->lineEdit_6->insert(port);
     ui->lineEdit_7->insert(baudRate);
