@@ -18,6 +18,7 @@ qt_add_executable(iSCARA_Application
     interpreter.h interpreter.cpp
     robotvariables.hpp robotvariables.cpp
     function.h
+    protocol.h protocol.cpp
 )
 
 set_target_properties(iSCARA_Application PROPERTIES

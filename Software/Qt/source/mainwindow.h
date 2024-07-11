@@ -11,6 +11,7 @@
 #include "interpreter.h"
 #include "robotvariables.hpp"
 #include "function.h"
+#include "protocol.h"
 
 #define TIMER_TIME 1000
 
