@@ -429,31 +429,6 @@
       <height>192</height>
      </rect>
     </property>
-    <item>
-     <property name="text">
-      <string>New Item</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>New Item</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>New Item</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>New Item</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>New Item</string>
-     </property>
-    </item>
    </widget>
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
@@ -472,7 +447,7 @@
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>260</y>
+      <y>250</y>
       <width>86</width>
       <height>26</height>
      </rect>
@@ -505,6 +480,19 @@
     </property>
     <property name="text">
      <string>Stop</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_9">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>280</y>
+      <width>86</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Refresh</string>
     </property>
    </widget>
   </widget>

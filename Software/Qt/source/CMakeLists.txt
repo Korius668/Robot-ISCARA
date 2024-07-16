@@ -19,6 +19,8 @@ qt_add_executable(iSCARA_Application
     robotvariables.hpp robotvariables.cpp
     function.h
     protocol.h protocol.cpp
+    scriptlist.h scriptlist.cpp scriptlist.ui
+
 )
 
 set_target_properties(iSCARA_Application PROPERTIES

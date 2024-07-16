@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
@@ -6,14 +6,19 @@
 #include <QLineEdit>
 #include <QPlainTextEdit>
 #include <iostream>
+#include <QDir>
+#include <QDirIterator>
+#include <filesystem>
 
 #include "serialcommunication.h"
 #include "interpreter.h"
 #include "robotvariables.hpp"
 #include "function.h"
 #include "protocol.h"
+#include "scriptlist.h"
 
 #define TIMER_TIME 1000
+#define PATH_SCRIPTS "/home/jchlopak/Robot-ISCARA/Software/Qt/scripts/"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -31,6 +36,10 @@ public:
     // ui widgets setup
     void setConnectButton(bool state);
     void setDisconnectButton(bool state);
+    void setDeleteButton(bool state);
+    void setUploadButton(bool state);
+    void setNormalButtons();
+
     void setTextEditor(bool state);
     void setSerialInfoTable(QString port, QString baudRate, QString dataBits, QString stopBits);
 
@@ -39,7 +48,7 @@ public:
     bool getDisconnectButton(){return disconnectButtonStatus;}
     bool getTextEditor(){return textEditorStatus;}
 
-public slots:
+private slots:
     void comboBoxSetup();       // port selection update
     void connectButton();       // connect button action
     void disconnectButton();    // disconnect button action
@@ -49,9 +58,18 @@ public slots:
     void sendWriteDataToDisplay(QString data);      // send serial write data text to terminal
     void setConnectionStatus(bool status);          // ui setup depending on serial port status
 
-private slots:
     void on_pushButton_3_clicked();     // help button action
     void on_pushButton_4_clicked();     // clear button action
+
+    void newScriptButton();
+    void deleteButton();
+    void uploadButton();
+    void stopButton();
+    void refreshButton();
+
+
+
+    void on_listWidget_itemSelectionChanged();
 
 private:
     Ui::MainWindow *ui              = nullptr;
@@ -68,6 +86,10 @@ private:
     // support functions
     void errorFunction  (int error);
     void helpFunction   ();
+
+    //
+    void updateScriptList();
+
 
 };
 

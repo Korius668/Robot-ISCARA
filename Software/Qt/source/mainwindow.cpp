@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowState(Qt::WindowMaximized); // maximizes the window (works sometimes)
 
     // buttons setup
+    setNormalButtons();
     setConnectButton(true);
     setDisconnectButton(false);
     setTextEditor(false);
@@ -30,6 +31,14 @@ MainWindow::MainWindow(QWidget *parent)
     connect(serial, SIGNAL(infoDataAvailable(QString)) , this, SLOT(sendInfoDataToDisplay(QString)));
     connect(serial, SIGNAL(connectionTestStatus(bool)) , this, SLOT(setConnectionStatus(bool)));
     ui->lineEdit->setMaxLength(30);
+
+    // script selection setup
+    connect(ui->pushButton_5, &QPushButton::clicked, this, &MainWindow::newScriptButton);
+    connect(ui->pushButton_6, &QPushButton::clicked, this, &MainWindow::deleteButton);
+    connect(ui->pushButton_7, &QPushButton::clicked, this, &MainWindow::uploadButton);
+    connect(ui->pushButton_8, &QPushButton::clicked, this, &MainWindow::stopButton);
+    connect(ui->pushButton_9, &QPushButton::clicked, this, &MainWindow::refreshButton);
+    updateScriptList();
 
     // info table setup
     setSerialInfoTable("NONE", "None", "None", "None");
@@ -217,3 +226,116 @@ void MainWindow::helpFunction(){
     }
     sendInfoDataToDisplay( QString::fromStdString(communicate) );
 }
+
+
+///////////////////////////////////////////////////////////////
+/// SCRIPT EDITOR////////
+///
+
+void MainWindow::updateScriptList()
+{
+    QDirIterator it(PATH_SCRIPTS, QStringList() << "*.dat", QDir::Files);
+    QString name;
+    ui->listWidget->clear();
+
+
+    while (it.hasNext()){
+        name = it.nextFileInfo().fileName();
+        name.truncate( name.lastIndexOf('.') );
+        ui->listWidget->addItem(name);
+    }
+    ui->listWidget->setCurrentRow(-1);
+    setDeleteButton(false);
+    setUploadButton(false);
+
+    ui->listWidget->sortItems();
+}
+
+
+
+void MainWindow::newScriptButton()
+{
+    ScriptList scriptlist;
+    scriptlist.setModal(true);
+    scriptlist.exec();
+
+}
+
+void MainWindow::deleteButton()
+{
+    string name;
+    string path = PATH_SCRIPTS;
+    name = ui->listWidget->currentItem()->text().toStdString();
+    name.append(".dat");
+
+    path.append(name);
+    std::filesystem::remove(path);
+
+    updateScriptList();
+}
+
+void MainWindow::uploadButton()
+{
+
+}
+
+void MainWindow::stopButton()
+{
+
+}
+
+void MainWindow::refreshButton()
+{
+    updateScriptList();
+}
+
+
+void MainWindow::setDeleteButton(bool status){
+    if(status == false){
+        ui->pushButton_6->setStyleSheet("background-color: black");
+        ui->pushButton_6->setDisabled(true);
+    }else{
+        ui->pushButton_6->setStyleSheet("background-color: grey");
+        ui->pushButton_6->setDisabled(false);
+    }
+}
+
+void MainWindow::setUploadButton(bool status){
+    if(status == false){
+        ui->pushButton_7->setStyleSheet("background-color: black");
+        ui->pushButton_7->setDisabled(true);
+    }else{
+        ui->pushButton_7->setStyleSheet("background-color: grey");
+        ui->pushButton_7->setDisabled(false);
+    }
+}
+
+void MainWindow::setNormalButtons()
+{
+    ui->pushButton->setStyleSheet("background-color: grey");
+    ui->pushButton_2->setStyleSheet("background-color: grey");
+    ui->pushButton_3->setStyleSheet("background-color: grey");
+    ui->pushButton_4->setStyleSheet("background-color: grey");
+    ui->pushButton_5->setStyleSheet("background-color: grey");
+    ui->pushButton_6->setStyleSheet("background-color: grey");
+    ui->pushButton_7->setStyleSheet("background-color: grey");
+    ui->pushButton_8->setStyleSheet("background-color: grey");
+    ui->pushButton_9->setStyleSheet("background-color: grey");
+}
+
+
+void MainWindow::on_listWidget_itemSelectionChanged()
+{
+    if ( ui->listWidget->currentRow() != -1 )
+    {
+        setDeleteButton(true);
+        setUploadButton(true);
+    }
+    else
+    {
+        setDeleteButton(false);
+        setUploadButton(false);
+    }
+
+}
+
